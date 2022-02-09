@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="source\log">
+      <UniqueIdentifier>{65a45ee2-fcc6-4366-9edc-443cc9186707}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="source\window">
+      <UniqueIdentifier>{fe780309-efcc-482a-b960-0d07787cf72a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="window\Component.cpp">
+      <Filter>source\window</Filter>
+    </ClCompile>
+    <ClCompile Include="log\logger.cpp">
+      <Filter>source\log</Filter>
+    </ClCompile>
+    <ClCompile Include="window\SWindow.cpp">
+      <Filter>source\window</Filter>
+    </ClCompile>
+    <ClCompile Include="window\WindMain.cpp">
+      <Filter>source\window</Filter>
+    </ClCompile>
+    <ClCompile Include="window\BasicWindows.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="window\Component.h">
+      <Filter>source\window</Filter>
+    </ClInclude>
+    <ClInclude Include="log\logger.h">
+      <Filter>source\log</Filter>
+    </ClInclude>
+    <ClInclude Include="window\SWindow.h">
+      <Filter>source\window</Filter>
+    </ClInclude>
+    <ClInclude Include="window\WinDefaultStyle.h">
+      <Filter>source\window</Filter>
+    </ClInclude>
+    <ClInclude Include="window\WindMain.h">
+      <Filter>source\window</Filter>
+    </ClInclude>
+    <ClInclude Include="window\win-sdl.h">
+      <Filter>source\window</Filter>
+    </ClInclude>
+    <ClInclude Include="window\BasicWindows.h">
+      <Filter>source\window</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
