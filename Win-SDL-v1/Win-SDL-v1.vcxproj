@@ -25,6 +25,7 @@
     <ClCompile Include="window\Component.cpp" />
     <ClCompile Include="window\SWindow.cpp" />
     <ClCompile Include="window\WindMain.cpp" />
+    <ClCompile Include="window\WinGraphics.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="window\BasicWindows.h" />
@@ -32,7 +33,7 @@
     <ClInclude Include="window\Component.h" />
     <ClInclude Include="window\SWindow.h" />
     <ClInclude Include="window\win-sdl.h" />
-    <ClInclude Include="window\WinDefaultStyle.h" />
+    <ClInclude Include="window\WinGraphics.h" />
     <ClInclude Include="window\WindMain.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -31,6 +31,9 @@
     <ClCompile Include="window\BasicWindows.cpp">
       <Filter>source</Filter>
     </ClCompile>
+    <ClCompile Include="window\WinGraphics.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="window\Component.h">
@@ -42,7 +45,7 @@
     <ClInclude Include="window\SWindow.h">
       <Filter>source\window</Filter>
     </ClInclude>
-    <ClInclude Include="window\WinDefaultStyle.h">
+    <ClInclude Include="window\WinGraphics.h">
       <Filter>source\window</Filter>
     </ClInclude>
     <ClInclude Include="window\WindMain.h">

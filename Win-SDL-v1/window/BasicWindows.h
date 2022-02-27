@@ -8,10 +8,10 @@
 #include <functional>
 #include "SWindow.h"
 
-// I know
-#define WINDOW_CLOSABLE		0x001
-#define WINDOW_MAXIMISABLE	0x010
-#define WINDOW_WRAPPABLE	0x100
+#define WINDOW_CLOSABLE		0b000001
+#define WINDOW_MAXIMISABLE	0b000010
+#define WINDOW_WRAPPABLE	0b000100
+#define WINDOW_RESIZABLE	0b001000
 
 class BasicWindow : public SWindow
 {
@@ -23,6 +23,7 @@ public:
 	std::function<void(BasicWindow*)> closedHandler;
 	std::function<void(BasicWindow*)> wrappedHandler;
 	std::function<void(BasicWindow*)> maximisedHandler;
+	std::function<void(BasicWindow*)> resizingHandler;
 
 	void setBounds(SDL_Rect b);
 
@@ -37,14 +38,14 @@ private:
 	int type;
 };
 
-#define DIALOG_OK		0x001
-#define DIALOG_OK_CLOSE 0x010
-#define DIALOG_YES_NO	0x100
+#define DIALOG_OK		0x1
+#define DIALOG_OK_CLOSE 0x2
+#define DIALOG_YES_NO	0x3
 
 class DialogBox : SWindow
 {
 public:
-	DialogBox(std::string title, std::string prompt, int type);
+	DialogBox(std::string title, std::string prompt, int type, int style);
 
 	std::function<void(DialogBox*)> OKHandler;
 	std::function<void(DialogBox*)> closeHandler;
@@ -55,10 +56,26 @@ private:
 	void doLogic();
 	void doEvents(SDL_Event* e);
 
-	int type;
+	int type, style;
 	std::string prompt;
 };
 
+class Popup : SWindow
+{
+public:
+	// In "style" use DIALOG_*
+	Popup(std::string title, std::string prompt, int style);
+	
+private:
+	void doDraw();
+	void doLogic();
+	void doEvents(SDL_Event* e);
+
+	int style;
+	std::string prompt;
+};
+
+/*
 class SmallWindow : SWindow
 {
 public:
@@ -72,5 +89,6 @@ private:
 	void doLogic();
 	void doEvents(SDL_Event* e);
 };
+*/
 
 #endif

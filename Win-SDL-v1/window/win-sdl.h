@@ -12,7 +12,7 @@
 
 #include "../log/logger.h"
 
-#include "WinDefaultStyle.h"
+#include "WinGraphics.h"
 #include "Component.h"
 #include "SWindow.h"
 #include "WindMain.h"
