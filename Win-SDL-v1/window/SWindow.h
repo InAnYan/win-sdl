@@ -1,8 +1,8 @@
-#ifndef SWINDOW_H
-#define SWINDOW_H
-
 // WIN-SDL - attempt to create windows library in C++ with SDL.
 // Copyright(C) 2022 Ruslan Popov
+
+#ifndef SWINDOW_H
+#define SWINDOW_H
 
 #include "win-sdl.h"
 

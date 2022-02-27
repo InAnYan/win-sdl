@@ -4,7 +4,11 @@
 #ifndef WIN_SDL_H
 #define WIN_SDL_H
 
-#include <SDL/SDL.h>
+#ifdef __linux__
+#   include <SDL2/SDL.h>
+#else
+#   include <SDL/SDL.h>
+#endif // __linux__
 
 #include <vector>
 #include <memory>
