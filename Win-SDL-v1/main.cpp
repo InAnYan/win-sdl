@@ -10,7 +10,11 @@
 #include <chrono>
 
 #define SDL_MAIN_HANDLED
-#include <SDL/SDL.h>
+#ifdef __linux__
+#   include <SDL2/SDL.h>
+#else
+#   include <SDL/SDL.h>
+#endif // __linux__
 
 #include "log/logger.h"
 #include "window/win-sdl.h"

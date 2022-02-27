@@ -6,6 +6,8 @@
 
 #include "win-sdl.h"
 
+class SWindow;
+
 class WindMain
 {
 public:
@@ -30,7 +32,7 @@ private:
    SDL_Point mousePos, clickOffset;
    static SDL_Point screen;
    bool resize, leftMouseButtonDown, superMode;
-   
+
    static std::vector<SWindow*> SWindows;
 };
 

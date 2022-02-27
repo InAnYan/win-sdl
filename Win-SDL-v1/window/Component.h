@@ -6,6 +6,8 @@
 
 #include "win-sdl.h"
 
+class SWindow;
+
 class Component
 {
 	friend class SWindow;

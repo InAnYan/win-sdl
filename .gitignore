@@ -6,3 +6,15 @@
 /Win-SDL-v1/x64/Debug
 /x64/Debug
 /a.out
+
+Win-SDL-v1/obj/Debug/log/logger.o
+
+Win-SDL-v1/obj/Debug/main.o
+
+Win-SDL-v1/obj/Debug/window/BasicWindows.o
+
+Win-SDL-v1/obj/Debug/window/Component.o
+
+Win-SDL-v1/obj/Debug/window/SWindow.o
+
+Win-SDL-v1/obj/Debug/window/WindMain.o
