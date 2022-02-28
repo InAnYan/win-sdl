@@ -14,19 +14,18 @@
 #define BLACK_CS {0x00, 0x00, 0x00, 0xFF}
 
 #ifndef WIN_STYLE_OVERWRITE
-    #define WINDOW_BG_CS     {0xD5, 0xD0, 0xCD, 0xFF}
+#define WINDOW_BG_CS  {0xC6, 0xB2, 0xA8, 0xFF}
 
-    #define WINDOW_T_CS      {0x33, 0x4F, 0x8F, 0xFF} // TODO: Add gradient
+#define WINDOW_T_CS    {0xED, 0xA8, 0x70, 0xFF}
+#define WINDOW_DT_CS  {0x7D, 0x59, 0x3B, 0xFF}
+#define WINDOW_LT_CS  {0xF7, 0xD9, 0xC0, 0xFF}
+#define WINDOW_RDT_CS   {0x70, 0x4F, 0x35, 0xFF} // -
+#define WINDOW_RLT_CS   {0x0A, 0x31, 0x50, 0xFF} // -
 
-    #define WINDOW_1DT_CS    {0x42, 0x42, 0x42, 0xFF}
-    #define WINDOW_1LT_CS    {0xD3, 0xD0, 0xC6, 0xFF}
-    #define WINDOW_2DT_CS    {0x7F, 0x7F, 0x7F, 0xFF}
-    #define WINDOW_2LT_CS    {0xFF, 0xFF, 0xFF, 0xFF}
+#define WINDOW_TITLE_HEIGHT 20 // TODO: Magic formula with font size. Maybe
+#define WINDOW_TBUTTONS_SPACE 1
 
-    #define WINDOW_TITLE_HEIGHT 20 // TODO: Magic formula with font size. Maybe
-    #define WINDOW_TBUTTONS_SPACE 1
-
-    #define POPUP_TIME_MS 2500
+#define POPUP_TIME_MS 2500
 #endif
 
 void drawLineThick(SDL_Renderer* renderer, SDL_Rect coords, unsigned int thickness, SDL_Color color);

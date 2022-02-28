@@ -36,8 +36,7 @@ BasicWindow::BasicWindow(std::string title, SDL_Rect bounds, int type) : SWindow
 	maximisedHandler = nullFunc;
 	wrappedHandler = nullFunc;
 	closedHandler = nullFunc;
-	movingHandler = nullFunc;
-	resizingHandler = nullFunc;
+	boundsHandler = nullFunc;
 }
 
 void BasicWindow::setBounds(SDL_Rect b)
@@ -47,72 +46,64 @@ void BasicWindow::setBounds(SDL_Rect b)
 	wBounds = BUTTON_UND_REGION;
 	mBounds = BUTTON_MAX_REGION;
 	cBounds = BUTTON_CLOSE_REGION;
-	movingHandler(this);
-	resizingHandler(this);
+	boundsHandler(this);
 }
 
 void BasicWindow::doDraw()
 {
 	if (wrapped)
 	{
+        oldBounds = bounds;
+        bounds = {oldBounds.x, oldBounds.y, oldBounds.w, WINDOW_TITLE_HEIGHT};
+
 		drawRectThick(renderer, bounds, 1, WINDOW_BG_CS, WINDOW_BG_CS);
 
 		// Frame
-		drawRectThickBump(renderer, {bounds.x, bounds.y, bounds.w, WINDOW_TITLE_HEIGHT }, 1, WINDOW_LT_CS, WINDOW_DT_CS, WINDOW_BG_CS);
-		drawAbsRectThickBump(renderer, { bounds.x + 1, bounds.y + 1, bounds.x + bounds.w - 1, WINDOW_TITLE_HEIGHT - 1 }, 1, WINDOW_T_CS, WINDOW_T_CS);
-		drawAbsRectThickBump(renderer, { bounds.x + 2, bounds.y + 2, bounds.x + bounds.w - 2, WINDOW_TITLE_HEIGHT - 2 }, 1, WINDOW_T_CS, WINDOW_T_CS);
-		drawAbsRectThickBump(renderer, { bounds.x + 3, bounds.y + 3, bounds.x + bounds.w - 3, WINDOW_TITLE_HEIGHT - 3 }, 1, WINDOW_DT_CS, WINDOW_LT_CS);
+		drawRectThickBump(renderer, bounds, 1, WINDOW_1LT_CS, WINDOW_1DT_CS, WINDOW_BG_CS);
+		drawAbsRectThickBump(renderer, { bounds.x + 1, bounds.y + 1, bounds.x + bounds.w - 1, bounds.y + bounds.h - 1 }, 1, WINDOW_2LT_CS, WINDOW_2DT_CS);
 
 		// Title
-		drawRectThick(renderer, FULL_TITLE_REGION, 1, WINDOW_LT_CS, WINDOW_LT_CS);
-		drawRectThickBumpV(renderer, TITLE_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		drawRectThick(renderer, { bounds.x + 5, bounds.y + 5, bounds.w - 5, WINDOW_TITLE_HEIGHT }, 1, WINDOW_T_CS, WINDOW_T_CS);
 
 		// Buttons
-		drawRectThickBumpV(renderer, BUTTON_UND_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
-		drawRectThickBumpV(renderer, BUTTON_MAX_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
-		drawRectThickBumpV(renderer, BUTTON_CLOSE_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThickBumpV(renderer, BUTTON_UND_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThickBumpV(renderer, BUTTON_MAX_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThickBumpV(renderer, BUTTON_CLOSE_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
 
 		SWindow::doDraw();
 	}
 	else if (maxed)
 	{
-		SDL_Rect mbounds = MBOUNDS;
-		drawRectThick(renderer, mbounds, 1, WINDOW_BG_CS, WINDOW_BG_CS);
+		drawRectThick(renderer, bounds, 1, WINDOW_BG_CS, WINDOW_BG_CS);
 
 		// Frame
-		drawRectThickBump(renderer, mbounds, 1, WINDOW_LT_CS, WINDOW_DT_CS, WINDOW_BG_CS);
-		drawAbsRectThickBump(renderer, { mbounds.x + 1, mbounds.y + 1, mbounds.x + mbounds.w - 1, mbounds.y + mbounds.h - 1 }, 1, WINDOW_T_CS, WINDOW_T_CS);
-		drawAbsRectThickBump(renderer, { mbounds.x + 2, mbounds.y + 2, mbounds.x + mbounds.w - 2, mbounds.y + mbounds.h - 2 }, 1, WINDOW_T_CS, WINDOW_T_CS);
-		drawAbsRectThickBump(renderer, { mbounds.x + 3, mbounds.y + 3, mbounds.x + mbounds.w - 3, mbounds.y + mbounds.h - 3 }, 1, WINDOW_DT_CS, WINDOW_LT_CS);
+		drawRectThickBump(renderer, bounds, 1, WINDOW_1LT_CS, WINDOW_1DT_CS, WINDOW_BG_CS);
+		drawAbsRectThickBump(renderer, { bounds.x + 1, bounds.y + 1, bounds.x + bounds.w - 1, bounds.y + bounds.h - 1 }, 1, WINDOW_2LT_CS, WINDOW_2DT_CS);
 
 		// Title
-		drawRectThick(renderer, FULL_TITLE_REGION, 1, WINDOW_LT_CS, WINDOW_LT_CS);
-		drawRectThickBumpV(renderer, TITLE_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		drawRectThick(renderer, { bounds.x + 5, bounds.y + 5, bounds.w - 5, bounds.h - 5 }, 1, WINDOW_T_CS, WINDOW_T_CS);
 
 		// Buttons
-		drawRectThickBumpV(renderer, BUTTON_UND_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
-		drawRectThickBumpV(renderer, BUTTON_MAX_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
-		drawRectThickBumpV(renderer, BUTTON_CLOSE_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThickBumpV(renderer, BUTTON_UND_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThickBumpV(renderer, BUTTON_MAX_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThickBumpV(renderer, BUTTON_CLOSE_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
 
 		SWindow::doDraw();
 	}
 	else {
-		drawRectThick(renderer, bounds, 1, WINDOW_BG_CS, WINDOW_BG_CS);
+		//drawRectThick(renderer, bounds, 1, WINDOW_BG_CS, WINDOW_BG_CS);
 
 		// Frame
-		drawRectThickBump(renderer, bounds, 1, WINDOW_LT_CS, WINDOW_DT_CS, WINDOW_BG_CS);
-		drawAbsRectThickBump(renderer, { bounds.x + 1, bounds.y + 1, bounds.x + bounds.w - 1, bounds.y + bounds.h - 1 }, 1, WINDOW_T_CS, WINDOW_T_CS);
-		drawAbsRectThickBump(renderer, { bounds.x + 2, bounds.y + 2, bounds.x + bounds.w - 2, bounds.y + bounds.h - 2 }, 1, WINDOW_T_CS, WINDOW_T_CS);
-		drawAbsRectThickBump(renderer, { bounds.x + 3, bounds.y + 3, bounds.x + bounds.w - 3, bounds.y + bounds.h - 3 }, 1, WINDOW_DT_CS, WINDOW_LT_CS);
+		drawRectThickBump(renderer, bounds, 1, WINDOW_1LT_CS, WINDOW_1DT_CS, WINDOW_BG_CS);
+		//drawAbsRectThickBump(renderer, { bounds.x + 1, bounds.y + 1, bounds.x + bounds.w - 1, bounds.y + bounds.h - 1 }, 1, WINDOW_2LT_CS, WINDOW_2DT_CS);
 
 		// Title
-		drawRectThick(renderer, FULL_TITLE_REGION, 1, WINDOW_LT_CS, WINDOW_LT_CS);
-		drawRectThickBumpV(renderer, TITLE_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThick(renderer, { bounds.x + 5, bounds.y + 5, bounds.w - 5, WINDOW_TITLE_HEIGHT }, 1, WINDOW_T_CS, WINDOW_T_CS);
 
 		// Buttons
-		drawRectThickBumpV(renderer, BUTTON_UND_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
-		drawRectThickBumpV(renderer, BUTTON_MAX_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
-		drawRectThickBumpV(renderer, BUTTON_CLOSE_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThickBumpV(renderer, BUTTON_UND_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThickBumpV(renderer, BUTTON_MAX_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
+		//drawRectThickBumpV(renderer, BUTTON_CLOSE_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
 
 		SWindow::doDraw();
 	}
@@ -137,7 +128,7 @@ void BasicWindow::doEvents(SDL_Event* e)
 	case SDL_MOUSEBUTTONDOWN:
 		if (!leftMouseButtonDown && e->button.button == SDL_BUTTON_LEFT)
 		{
-			
+
 			leftMouseButtonDown = true;
 			if (SDL_PointInRect(&mousePos, &tBounds))
 			{
@@ -148,18 +139,18 @@ void BasicWindow::doEvents(SDL_Event* e)
 		}
 		if (SDL_PointInRect(&mousePos, &cBounds))
 		{
-			if (closedHandler) closedHandler(this);
+			closedHandler(this);
 			WindMain::deleteActiveWindow();
 		}
 		else if (SDL_PointInRect(&mousePos, &mBounds))
 		{
 			maxed = maxed == false ? maxed = true : maxed = false;
-			if (maximisedHandler) maximisedHandler(this); // TODO: For what?
+			maximisedHandler(this); // TODO: For what?
 		}
 		else if (SDL_PointInRect(&mousePos, &wBounds))
 		{
 			wrapped = wrapped == false ? wrapped = true : wrapped = false;
-			if (wrappedHandler) wrappedHandler(this);
+			wrappedHandler(this);
 		}
 		break;
 	}
@@ -169,7 +160,7 @@ void BasicWindow::doEvents(SDL_Event* e)
 
 void BasicWindow::doLogic()
 {
-	if (alwaysHandler) alwaysHandler(this);
-	if (movingHandler && moving) movingHandler(this);
+    alwaysHandler(this);
+    boundsHandler(this);
 	SWindow::doLogic();
 }

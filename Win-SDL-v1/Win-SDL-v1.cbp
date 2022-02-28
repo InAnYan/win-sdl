@@ -45,7 +45,8 @@
 		<Unit filename="window/Component.h" />
 		<Unit filename="window/SWindow.cpp" />
 		<Unit filename="window/SWindow.h" />
-		<Unit filename="window/WinDefaultStyle.h" />
+		<Unit filename="window/WinGraphics.cpp" />
+		<Unit filename="window/WinGraphics.h" />
 		<Unit filename="window/WindMain.cpp" />
 		<Unit filename="window/WindMain.h" />
 		<Unit filename="window/win-sdl.h" />

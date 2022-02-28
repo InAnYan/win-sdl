@@ -19,11 +19,10 @@ public:
 	BasicWindow(std::string title, SDL_Rect bounds, int type);
 
 	std::function<void(BasicWindow*)> alwaysHandler;
-	std::function<void(BasicWindow*)> movingHandler;
+	std::function<void(BasicWindow*)> boundsHandler;
 	std::function<void(BasicWindow*)> closedHandler;
 	std::function<void(BasicWindow*)> wrappedHandler;
 	std::function<void(BasicWindow*)> maximisedHandler;
-	std::function<void(BasicWindow*)> resizingHandler;
 
 	void setBounds(SDL_Rect b);
 
@@ -65,7 +64,7 @@ class Popup : SWindow
 public:
 	// In "style" use DIALOG_*
 	Popup(std::string title, std::string prompt, int style);
-	
+
 private:
 	void doDraw();
 	void doLogic();
