@@ -95,10 +95,10 @@ void BasicWindow::doDraw()
 
 		// Frame
 		drawRectThickBump(renderer, bounds, 1, WINDOW_1LT_CS, WINDOW_1DT_CS, WINDOW_BG_CS);
-		//drawAbsRectThickBump(renderer, { bounds.x + 1, bounds.y + 1, bounds.x + bounds.w - 1, bounds.y + bounds.h - 1 }, 1, WINDOW_2LT_CS, WINDOW_2DT_CS);
+		drawAbsRectThickBump(renderer, { bounds.x + 1, bounds.y + 1, bounds.x + bounds.w - 1, bounds.y + bounds.h - 1 }, 1, WINDOW_2LT_CS, WINDOW_2DT_CS);
 
 		// Title
-		//drawRectThick(renderer, { bounds.x + 5, bounds.y + 5, bounds.w - 5, WINDOW_TITLE_HEIGHT }, 1, WINDOW_T_CS, WINDOW_T_CS);
+		drawRectThick(renderer, { bounds.x + 4, bounds.y + 4, bounds.w - 8, WINDOW_TITLE_HEIGHT }, 1, WINDOW_T_CS, WINDOW_T_CS);
 
 		// Buttons
 		//drawRectThickBumpV(renderer, BUTTON_UND_REGION, 1, WINDOW_T_CS, WINDOW_DT_CS, WINDOW_T_CS);
