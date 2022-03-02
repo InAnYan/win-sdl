@@ -7059,13 +7059,13 @@
 
 1645987266 /home/ruslan/projects/win-sdl/Win-SDL-v1/window/WinDefaultStyle.h
 
-1646042173 /home/ruslan/projects/win-sdl/Win-SDL-v1/window/SWindow.h
+1646242561 /home/ruslan/projects/win-sdl/Win-SDL-v1/window/SWindow.h
 	"win-sdl.h"
 
 1645987765 /home/ruslan/projects/win-sdl/Win-SDL-v1/window/WindMain.h
 	"win-sdl.h"
 
-1646215081 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/main.cpp
+1646215428 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/main.cpp
 	<iostream>
 	<chrono>
 	<SDL2/SDL.h>
@@ -7074,22 +7074,22 @@
 	"window/win-sdl.h"
 	"window/BasicWindows.h"
 
-1646043684 /home/ruslan/projects/win-sdl/Win-SDL-v1/window/BasicWindows.h
+1646242583 /home/ruslan/projects/win-sdl/Win-SDL-v1/window/BasicWindows.h
 	<functional>
 	"SWindow.h"
 
-1646171728 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/window/BasicWindows.cpp
+1646243335 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/window/BasicWindows.cpp
 	"BasicWindows.h"
 	"WinGraphics.h"
 	"WindMain.h"
 
-1645987266 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/window/SWindow.cpp
+1646242573 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/window/SWindow.cpp
 	"SWindow.h"
 
 1645987266 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/window/WindMain.cpp
 	"WindMain.h"
 
-1646043240 /home/ruslan/projects/win-sdl/Win-SDL-v1/window/WinGraphics.h
+1646241547 /home/ruslan/projects/win-sdl/Win-SDL-v1/window/WinGraphics.h
 	<SDL2/SDL.h>
 	<SDL/SDL.h>
 

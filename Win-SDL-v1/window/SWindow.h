@@ -30,7 +30,7 @@ protected:
 	virtual void doLogic();
 
 	SDL_Renderer* renderer;
-	SDL_Rect bounds, oldBounds;
+	SDL_Rect bounds;
 	bool active;
 
 private:

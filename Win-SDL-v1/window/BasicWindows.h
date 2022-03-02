@@ -13,6 +13,13 @@
 #define WINDOW_WRAPPABLE	0b000100
 #define WINDOW_RESIZABLE	0b001000
 
+enum class WindowState
+{
+    WIN_MAXED,
+    WIN_WRAPPED,
+    WIN_NORMAL
+};
+
 class BasicWindow : public SWindow
 {
 public:
@@ -31,9 +38,10 @@ private:
 	virtual void doLogic();
 	virtual void doEvents(SDL_Event* e);
 
-	SDL_Rect tBounds, wBounds, cBounds, mBounds;
+	SDL_Rect tBounds, wBounds, cBounds, mBounds, oldBounds;
 	SDL_Point mousePos, clickOffset;
-	bool maxed, wrapped, moving, leftMouseButtonDown;
+	bool moving, leftMouseButtonDown;
+	WindowState state;
 	int type;
 };
 

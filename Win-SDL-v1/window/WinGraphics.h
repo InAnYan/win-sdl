@@ -24,7 +24,8 @@
     #define WINDOW_2LT_CS    {0xFF, 0xFF, 0xFF, 0xFF}
 
     #define WINDOW_TITLE_HEIGHT 20 // TODO: Magic formula with font size. Maybe
-    #define WINDOW_TBUTTONS_SPACE 1
+    #define WINDOW_BUTTON_WIDTH WINDOW_TITLE_HEIGHT-1
+    #define WINDOW_TBUTTONS_SPACE 2
 
     #define POPUP_TIME_MS 2500
 #endif
