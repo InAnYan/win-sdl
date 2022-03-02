@@ -28,7 +28,7 @@ SDL_Window* window;
 SDL_Renderer* renderer;
 
 SDL_Point WindMain::screen;
-std::vector<SWindow*> WindMain::SWindows;
+std::vector<shared_ptr<SWindow>> WindMain::SWindows;
 
 void deInit()
 {
@@ -81,9 +81,9 @@ int main(int argc, char** argv)
         return 5;
     }
 
-	BasicWindow* form1 = new BasicWindow("Window 1", { 100,100,400,400 }, 0);
-	BasicWindow* form2 = new BasicWindow("Window 2", { 200,100,100,400 }, 0);
-	BasicWindow* form3 = new BasicWindow("Window 3", { 500,500,300,400 }, 0);
+	shared_ptr<BasicWindow> form1(new BasicWindow("Window 1", { 100,100,400,400 }, 0));
+	shared_ptr<BasicWindow> form2(new BasicWindow("Window 2", { 200,100,100,400 }, 0));
+	shared_ptr<BasicWindow> form3(new BasicWindow("Window 3", { 500,500,300,400 }, 0));
 
 	WindMain windowManager(window, renderer, {1024, 768});
 	windowManager.addWindow(form1);

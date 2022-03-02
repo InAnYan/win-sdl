@@ -15,8 +15,8 @@ public:
 	SWindow(std::string n, SDL_Rect b);
 	~SWindow();
 
-	void addComponent(Component* c);
-	void deleteComponent(Component* c);
+	void addComponent(shared_ptr<Component> c);
+	void deleteComponent(shared_ptr<Component> c);
 
 	std::string name;
 	SDL_Color bgColor;
@@ -34,8 +34,7 @@ protected:
 	bool active;
 
 private:
-	//bool accessible;
-	std::vector<Component*> components;
+	std::vector<shared_ptr<Component>> components;
 };
 
 #endif

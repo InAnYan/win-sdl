@@ -8,7 +8,7 @@
 
 void WindMain::doRender()
 {
-	for (SWindow* win : SWindows)
+	for (shared_ptr<SWindow> win : SWindows)
 	{
 		SDL_RenderSetViewport(mainRenderer, NULL);
 		win->doDraw();
@@ -23,7 +23,7 @@ void WindMain::doEvents(SDL_Event* e)
 		{
 		case SDL_MOUSEMOTION:
 			mousePos = { e->motion.x, e->motion.y };
-			for (SWindow* win : SWindows) // TODO: Hardcoded. Linked to #1
+			for (shared_ptr<SWindow> win : SWindows) // TODO: Hardcoded. Linked to #1
 			{
 				win->doEvents(e);
 			}
@@ -54,70 +54,7 @@ void WindMain::doEvents(SDL_Event* e)
 						}
 						if (!overlap)
 						{
-
-//#include <iostream>
-//#include <vector>
-//							using namespace std;
-//
-//							class Base
-//							{
-//							public:
-//								virtual void identify()
-//								{
-//									cout << "BASE" << endl;
-//								}
-//							};
-//
-//							class Derived : public Base
-//							{
-//							public:
-//								virtual void identify()
-//								{
-//									cout << "DERIVED" << endl;
-//									cout << x << endl;
-//									x++;
-//								}
-//
-//								Derived()
-//								{
-//									x = 2;
-//								}
-//
-//								int x;
-//							};
-//
-//							int main()
-//							{
-//								Derived* der1 = new Derived();
-//								Derived* der2 = new Derived();
-//
-//								vector<Base*> vect;
-//								vect.push_back(der1);
-//								vect.push_back(der2);
-//
-//								vect[0]->identify();
-//								vect[0]->identify();
-//								vect[1]->identify();
-//								vect[1]->identify();
-//
-//
-//								Base* temp = vect[0];
-//								vect.erase(vect.begin());
-//								vect.emplace_back(temp);
-//								//vect[1] = vect[0];
-//								//vect[0] = temp;
-//
-//
-//								cout << endl << endl;
-//								vect[0]->identify();
-//								vect[1]->identify();
-//								vect[0]->identify();
-//								vect[1]->identify();
-//								return 0;
-//							}
-
-
-							SWindow* temp = SWindows[i];
+							shared_ptr<SWindow> temp = SWindows[i];
 							S_END->active = false;
 							SWindows.erase(SWindows.begin() + i);
 							SWindows.push_back(temp);
@@ -135,13 +72,13 @@ void WindMain::doEvents(SDL_Event* e)
 
 void WindMain::doLogic()
 {
-	for (SWindow* win : SWindows)
+	for (shared_ptr<SWindow> win : SWindows)
 	{
 		win->doLogic();
 	}
 }
 
-void WindMain::addWindow(SWindow* window)
+void WindMain::addWindow(shared_ptr<SWindow> window)
 {
 	SWindows.push_back(window);
 	window->renderer = mainRenderer;
@@ -167,7 +104,7 @@ SDL_Point WindMain::getDimensions()
 	return screen;
 }
 
-void WindMain::deleteWindow(SWindow* w)
+void WindMain::deleteWindow(shared_ptr<SWindow> w)
 {
 	for (int i = 0; i < SWindows.size(); i++)
 	{
@@ -175,8 +112,6 @@ void WindMain::deleteWindow(SWindow* w)
 		{
 			logDebug("Deleting window: \"" + SWindows[i]->name + "\"");
 			SWindows.erase(SWindows.begin()+i);
-			delete w; // TODO: Change to smart pointer
-			w = NULL;
 		}
 	}
 }
@@ -184,16 +119,9 @@ void WindMain::deleteWindow(SWindow* w)
 void WindMain::deleteActiveWindow()
 {
 	SWindows.pop_back();
-	// TODO: Memory leak?
 }
 
 WindMain::~WindMain()
 {
-	for (SWindow* win : SWindows)
-	{
-		logDebug("Deleting window: \"" + win->name + "\"");
-		delete win;
-		win = NULL;
-	}
 	SWindows.clear();
 }

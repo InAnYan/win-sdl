@@ -15,11 +15,10 @@ public:
    void doEvents(SDL_Event* e);
    void doLogic();
 
-   void addWindow(SWindow* window);
-   static void deleteWindow(SWindow* window);
+   void addWindow(shared_ptr<SWindow> window);
+   static void deleteWindow(shared_ptr<SWindow> window);
    static void deleteActiveWindow();
 
-   void super();
    static SDL_Point getDimensions();
 
    WindMain(SDL_Window* window, SDL_Renderer* renderer, SDL_Point dim);
@@ -33,7 +32,7 @@ private:
    static SDL_Point screen;
    bool resize, leftMouseButtonDown, superMode;
 
-   static std::vector<SWindow*> SWindows;
+   static std::vector<shared_ptr<SWindow>> SWindows;
 };
 
 #endif

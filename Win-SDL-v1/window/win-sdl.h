@@ -4,6 +4,8 @@
 #ifndef WIN_SDL_H
 #define WIN_SDL_H
 
+#include <memory>
+
 #ifdef __linux__
 #   include <SDL2/SDL.h>
 #else
