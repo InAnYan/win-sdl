@@ -67,14 +67,19 @@ int main(int argc, char** argv)
 		return 4;
 	}
 
-	logDebug("Creating renderer...");
-	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
-	if (renderer == NULL)
-	{
-		logError("Can`t create renderer");
-		deInit();
-		return 5;
-	}
+    logDebug("Creating renderer...");
+    #ifndef __linux__
+        renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+	#else
+        SDL_Surface* windowSurface = SDL_GetWindowSurface(window);
+        renderer = SDL_CreateSoftwareRenderer(windowSurface);
+	#endif // __linux__
+    if (renderer == NULL)
+    {
+        logError("Can`t create renderer");
+        deInit();
+        return 5;
+    }
 
 	BasicWindow* form1 = new BasicWindow("Window 1", { 100,100,400,400 }, 0);
 	BasicWindow* form2 = new BasicWindow("Window 2", { 200,100,100,400 }, 0);
@@ -110,7 +115,9 @@ int main(int argc, char** argv)
 		//logDebug("drawing");
 		windowManager.doRender();
 		SDL_RenderPresent(renderer);
-
+		#ifdef __linux__
+        SDL_UpdateWindowSurface(window);
+        #endif
 		// FPS
 		auto end = std::chrono::high_resolution_clock::now();
 		temp1 = std::chrono::duration_cast<std::chrono::milliseconds>(end - begin).count();

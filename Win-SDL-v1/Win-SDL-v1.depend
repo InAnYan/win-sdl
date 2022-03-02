@@ -131,17 +131,17 @@
 	<cstring>
 	<errno.h>
 
-1608116695 /usr/include/errno.h
+1645731760 /usr/include/errno.h
 	<features.h>
 	<bits/errno.h>
 	<bits/types/error_t.h>
 
-1608116695 /usr/include/features.h
+1645731760 /usr/include/features.h
 	<stdc-predef.h>
 	<sys/cdefs.h>
 	<gnu/stubs.h>
 
-1608116695 /usr/include/stdc-predef.h
+1645731760 /usr/include/stdc-predef.h
 
 1585727307 /usr/include/boost/config/compiler/borland.hpp
 	<climits>
@@ -152,14 +152,14 @@
 	<errno.h>
 	<float.h>
 
-1608116695 /usr/include/limits.h
+1645731760 /usr/include/limits.h
 	<bits/libc-header-start.h>
 	<bits/wordsize.h>
 	<bits/posix1_lim.h>
 	<bits/posix2_lim.h>
 	<bits/xopen_lim.h>
 
-1608116695 /usr/include/wchar.h
+1645731760 /usr/include/wchar.h
 	<bits/libc-header-start.h>
 	<bits/floatn.h>
 	<stddef.h>
@@ -216,7 +216,7 @@
 	<string.h>
 	<algorithm>
 
-1608116695 /usr/include/unistd.h
+1645731760 /usr/include/unistd.h
 	<features.h>
 	<bits/posix_opt.h>
 	<bits/environments.h>
@@ -227,7 +227,7 @@
 	<bits/unistd.h>
 	<bits/unistd_ext.h>
 
-1608116695 /usr/include/stdlib.h
+1645731760 /usr/include/stdlib.h
 	<bits/libc-header-start.h>
 	<stddef.h>
 	<bits/waitflags.h>
@@ -241,18 +241,18 @@
 	<bits/stdlib.h>
 	<bits/stdlib-ldbl.h>
 
-1608116695 /usr/include/alloca.h
+1645731760 /usr/include/alloca.h
 	<features.h>
 	<stddef.h>
 
-1608116695 /usr/include/string.h
+1645731760 /usr/include/string.h
 	<bits/libc-header-start.h>
 	<stddef.h>
 	<bits/types/locale_t.h>
 	<strings.h>
 	<bits/string_fortified.h>
 
-1608116695 /usr/include/strings.h
+1645731760 /usr/include/strings.h
 	<features.h>
 	<stddef.h>
 	<bits/types/locale_t.h>
@@ -344,7 +344,7 @@
 	<pthread.h>
 	<boost/config/detail/posix_features.hpp>
 
-1608116695 /usr/include/pthread.h
+1645731760 /usr/include/pthread.h
 	<features.h>
 	<sched.h>
 	<time.h>
@@ -354,7 +354,7 @@
 	<bits/wordsize.h>
 	<bits/types/struct_timespec.h>
 
-1608116695 /usr/include/sched.h
+1645731760 /usr/include/sched.h
 	<features.h>
 	<bits/types.h>
 	<stddef.h>
@@ -364,7 +364,7 @@
 	<bits/sched.h>
 	<bits/cpu-set.h>
 
-1608116695 /usr/include/time.h
+1645731760 /usr/include/time.h
 	<features.h>
 	<stddef.h>
 	<bits/time.h>
@@ -408,7 +408,7 @@
 	<signal.h>
 	<boost/config/detail/posix_features.hpp>
 
-1608116695 /usr/include/signal.h
+1645731760 /usr/include/signal.h
 	<features.h>
 	<bits/types.h>
 	<bits/signum.h>
@@ -470,12 +470,12 @@
 	<stddef.h>
 	<limits.h>
 
-1608116695 /usr/include/inttypes.h
+1645731760 /usr/include/inttypes.h
 	<features.h>
 	<stdint.h>
 	<stddef.h>
 
-1608116695 /usr/include/stdint.h
+1645731760 /usr/include/stdint.h
 	<bits/libc-header-start.h>
 	<bits/types.h>
 	<bits/wchar.h>
@@ -1491,7 +1491,7 @@
 	<boost/current_function.hpp>
 	<assert.h>
 
-1608116695 /usr/include/assert.h
+1645731760 /usr/include/assert.h
 	<features.h>
 
 1585727307 /usr/include/boost/checked_delete.hpp
@@ -2516,7 +2516,7 @@
 	<boost/predef/detail/test.h>
 	<boost/predef/detail/test.h>
 
-1608116695 /usr/include/endian.h
+1645731760 /usr/include/endian.h
 	<features.h>
 	<bits/endian.h>
 	<bits/byteswap.h>
@@ -4747,7 +4747,7 @@
 	<iomanip>
 	<typeinfo>
 
-1608116695 /usr/include/math.h
+1645731760 /usr/include/math.h
 	<bits/libc-header-start.h>
 	<bits/types.h>
 	<bits/math-vector.h>
@@ -4814,12 +4814,12 @@
 	<stdio.h>
 	<fenv.h>
 
-1608116695 /usr/include/fenv.h
+1645731760 /usr/include/fenv.h
 	<bits/libc-header-start.h>
 	<bits/fenv.h>
 	<bits/fenvinline.h>
 
-1608116695 /usr/include/stdio.h
+1645731760 /usr/include/stdio.h
 	<bits/libc-header-start.h>
 	<stddef.h>
 	<stdarg.h>
@@ -5848,7 +5848,7 @@
 	<string>
 	<vector>
 
-1608116695 /usr/include/ctype.h
+1645731760 /usr/include/ctype.h
 	<features.h>
 	<bits/types.h>
 	<bits/endian.h>
@@ -6771,12 +6771,12 @@
 1586798831 /usr/include/SDL2/SDL_config.h
 	<SDL2/_real_SDL_config.h>
 
-1608116695 /usr/include/malloc.h
+1645731760 /usr/include/malloc.h
 	<features.h>
 	<stddef.h>
 	<stdio.h>
 
-1608116695 /usr/include/memory.h
+1645731760 /usr/include/memory.h
 	<features.h>
 	<string.h>
 
@@ -7065,7 +7065,7 @@
 1645987765 /home/ruslan/projects/win-sdl/Win-SDL-v1/window/WindMain.h
 	"win-sdl.h"
 
-1646042130 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/main.cpp
+1646215081 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/main.cpp
 	<iostream>
 	<chrono>
 	<SDL2/SDL.h>
@@ -7078,7 +7078,7 @@
 	<functional>
 	"SWindow.h"
 
-1646043814 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/window/BasicWindows.cpp
+1646171728 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/window/BasicWindows.cpp
 	"BasicWindows.h"
 	"WinGraphics.h"
 	"WindMain.h"
