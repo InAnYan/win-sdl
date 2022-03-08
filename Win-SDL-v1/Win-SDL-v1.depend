@@ -136,12 +136,12 @@
 	<bits/errno.h>
 	<bits/types/error_t.h>
 
-1645731760 /usr/include/features.h
+1644924080 /usr/include/features.h
 	<stdc-predef.h>
 	<sys/cdefs.h>
 	<gnu/stubs.h>
 
-1645731760 /usr/include/stdc-predef.h
+1644924080 /usr/include/stdc-predef.h
 
 1585727307 /usr/include/boost/config/compiler/borland.hpp
 	<climits>
@@ -159,7 +159,7 @@
 	<bits/posix2_lim.h>
 	<bits/xopen_lim.h>
 
-1645731760 /usr/include/wchar.h
+1644924080 /usr/include/wchar.h
 	<bits/libc-header-start.h>
 	<bits/floatn.h>
 	<stddef.h>
@@ -172,6 +172,7 @@
 	<bits/types/locale_t.h>
 	<bits/wctype-wchar.h>
 	<bits/wchar2.h>
+	<bits/floatn.h>
 	<bits/wchar-ldbl.h>
 
 1585727307 /usr/include/boost/config/compiler/metrowerks.hpp
@@ -227,7 +228,7 @@
 	<bits/unistd.h>
 	<bits/unistd_ext.h>
 
-1645731760 /usr/include/stdlib.h
+1644924080 /usr/include/stdlib.h
 	<bits/libc-header-start.h>
 	<stddef.h>
 	<bits/waitflags.h>
@@ -239,20 +240,21 @@
 	<bits/stdlib-bsearch.h>
 	<bits/stdlib-float.h>
 	<bits/stdlib.h>
+	<bits/floatn.h>
 	<bits/stdlib-ldbl.h>
 
-1645731760 /usr/include/alloca.h
+1644924080 /usr/include/alloca.h
 	<features.h>
 	<stddef.h>
 
-1645731760 /usr/include/string.h
+1644924080 /usr/include/string.h
 	<bits/libc-header-start.h>
 	<stddef.h>
 	<bits/types/locale_t.h>
 	<strings.h>
 	<bits/string_fortified.h>
 
-1645731760 /usr/include/strings.h
+1644924080 /usr/include/strings.h
 	<features.h>
 	<stddef.h>
 	<bits/types/locale_t.h>
@@ -408,10 +410,10 @@
 	<signal.h>
 	<boost/config/detail/posix_features.hpp>
 
-1645731760 /usr/include/signal.h
+1644924080 /usr/include/signal.h
 	<features.h>
 	<bits/types.h>
-	<bits/signum.h>
+	<bits/signum-generic.h>
 	<bits/types/sig_atomic_t.h>
 	<bits/types/sigset_t.h>
 	<bits/types/struct_timespec.h>
@@ -470,12 +472,12 @@
 	<stddef.h>
 	<limits.h>
 
-1645731760 /usr/include/inttypes.h
+1644924080 /usr/include/inttypes.h
 	<features.h>
 	<stdint.h>
 	<stddef.h>
 
-1645731760 /usr/include/stdint.h
+1644924080 /usr/include/stdint.h
 	<bits/libc-header-start.h>
 	<bits/types.h>
 	<bits/wchar.h>
@@ -2516,7 +2518,7 @@
 	<boost/predef/detail/test.h>
 	<boost/predef/detail/test.h>
 
-1645731760 /usr/include/endian.h
+1644924080 /usr/include/endian.h
 	<features.h>
 	<bits/endian.h>
 	<bits/byteswap.h>
@@ -4747,7 +4749,7 @@
 	<iomanip>
 	<typeinfo>
 
-1645731760 /usr/include/math.h
+1644924080 /usr/include/math.h
 	<bits/libc-header-start.h>
 	<bits/types.h>
 	<bits/math-vector.h>
@@ -4800,7 +4802,6 @@
 	<bits/mathcalls-narrow.h>
 	<bits/mathcalls-narrow.h>
 	<bits/iscanonical.h>
-	<bits/mathinline.h>
 
 1585727307 /usr/include/boost/math/tools/user.hpp
 
@@ -4819,7 +4820,7 @@
 	<bits/fenv.h>
 	<bits/fenvinline.h>
 
-1645731760 /usr/include/stdio.h
+1644924080 /usr/include/stdio.h
 	<bits/libc-header-start.h>
 	<stddef.h>
 	<stdarg.h>
@@ -4832,10 +4833,11 @@
 	<bits/types/cookie_io_functions_t.h>
 	<stdarg.h>
 	<bits/stdio_lim.h>
-	<bits/sys_errlist.h>
+	<bits/floatn.h>
 	<bits/getopt_posix.h>
 	<bits/stdio.h>
 	<bits/stdio2.h>
+	<bits/floatn.h>
 	<bits/stdio-ldbl.h>
 
 1585727307 /usr/include/boost/math/special_functions/math_fwd.hpp
@@ -5848,7 +5850,7 @@
 	<string>
 	<vector>
 
-1645731760 /usr/include/ctype.h
+1644924080 /usr/include/ctype.h
 	<features.h>
 	<bits/types.h>
 	<bits/endian.h>
@@ -6701,7 +6703,7 @@
 	"SWindow.h"
 	"WindMain.h"
 
-1586798831 /usr/include/SDL2/SDL.h
+1642206177 /usr/include/SDL2/SDL.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_assert.h"
@@ -6715,11 +6717,13 @@
 	"SDL_filesystem.h"
 	"SDL_gamecontroller.h"
 	"SDL_haptic.h"
+	"SDL_hidapi.h"
 	"SDL_hints.h"
 	"SDL_joystick.h"
 	"SDL_loadso.h"
 	"SDL_log.h"
 	"SDL_messagebox.h"
+	"SDL_metal.h"
 	"SDL_mutex.h"
 	"SDL_power.h"
 	"SDL_render.h"
@@ -6731,15 +6735,17 @@
 	"SDL_timer.h"
 	"SDL_version.h"
 	"SDL_video.h"
+	"SDL_locale.h"
+	"SDL_misc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_main.h
+1642206177 /usr/include/SDL2/SDL_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_stdinc.h
+1642206177 /usr/include/SDL2/SDL_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -6768,29 +6774,29 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_config.h
+1642206177 /usr/include/SDL2/SDL_config.h
 	<SDL2/_real_SDL_config.h>
 
-1645731760 /usr/include/malloc.h
+1644924080 /usr/include/malloc.h
 	<features.h>
 	<stddef.h>
 	<stdio.h>
 
-1645731760 /usr/include/memory.h
+1644924080 /usr/include/memory.h
 	<features.h>
 	<string.h>
 
-1586798831 /usr/include/SDL2/begin_code.h
+1642206177 /usr/include/SDL2/begin_code.h
 
-1586798831 /usr/include/SDL2/close_code.h
+1642206177 /usr/include/SDL2/close_code.h
 
-1586798831 /usr/include/SDL2/SDL_assert.h
+1642206177 /usr/include/SDL2/SDL_assert.h
 	"SDL_config.h"
 	"begin_code.h"
 	<signal.h>
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_atomic.h
+1642206177 /usr/include/SDL2/SDL_atomic.h
 	"SDL_stdinc.h"
 	"SDL_platform.h"
 	"begin_code.h"
@@ -6798,14 +6804,14 @@
 	<mbarrier.h>
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_platform.h
+1642206177 /usr/include/SDL2/SDL_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	<winapifamily.h>
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_audio.h
+1642206177 /usr/include/SDL2/SDL_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -6815,55 +6821,59 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_error.h
+1642206177 /usr/include/SDL2/SDL_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_endian.h
+1642206177 /usr/include/SDL2/SDL_endian.h
 	"SDL_stdinc.h"
+	<intrin.h>
 	<endian.h>
+	<endian.h>
+	<sys/endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_mutex.h
+1642206177 /usr/include/SDL2/SDL_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_thread.h
+1642206177 /usr/include/SDL2/SDL_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_atomic.h"
 	"SDL_mutex.h"
-	"begin_code.h"
 	<process.h>
 	<process.h>
 	<stdlib.h>
+	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_rwops.h
+1642206177 /usr/include/SDL2/SDL_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_clipboard.h
+1642206177 /usr/include/SDL2/SDL_clipboard.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_cpuinfo.h
+1642206177 /usr/include/SDL2/SDL_cpuinfo.h
 	"SDL_stdinc.h"
 	<intrin.h>
 	<intrin.h>
+	<arm_neon.h>
 	<altivec.h>
 	<arm_neon.h>
 	<armintr.h>
 	<arm_neon.h>
-	<armintr.h>
-	<arm_neon.h>
+	<arm64intr.h>
+	<arm64_neon.h>
 	<mm3dnow.h>
 	<immintrin.h>
 	<mmintrin.h>
@@ -6873,7 +6883,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_events.h
+1642206177 /usr/include/SDL2/SDL_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -6887,7 +6897,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_video.h
+1642206177 /usr/include/SDL2/SDL_video.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -6895,13 +6905,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_pixels.h
+1642206177 /usr/include/SDL2/SDL_pixels.h
 	"SDL_stdinc.h"
 	"SDL_endian.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_rect.h
+1642206177 /usr/include/SDL2/SDL_rect.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_pixels.h"
@@ -6909,7 +6919,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_surface.h
+1642206177 /usr/include/SDL2/SDL_surface.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -6918,11 +6928,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_blendmode.h
+1642206177 /usr/include/SDL2/SDL_blendmode.h
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_keyboard.h
+1642206177 /usr/include/SDL2/SDL_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keycode.h"
@@ -6930,39 +6940,40 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_keycode.h
+1642206177 /usr/include/SDL2/SDL_keycode.h
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1586798831 /usr/include/SDL2/SDL_scancode.h
+1642206177 /usr/include/SDL2/SDL_scancode.h
 	"SDL_stdinc.h"
 
-1586798831 /usr/include/SDL2/SDL_mouse.h
+1642206177 /usr/include/SDL2/SDL_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_joystick.h
+1642206177 /usr/include/SDL2/SDL_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_gamecontroller.h
+1642206177 /usr/include/SDL2/SDL_gamecontroller.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
+	"SDL_sensor.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_quit.h
+1642206177 /usr/include/SDL2/SDL_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1586798831 /usr/include/SDL2/SDL_gesture.h
+1642206177 /usr/include/SDL2/SDL_gesture.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -6970,66 +6981,66 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_touch.h
+1642206177 /usr/include/SDL2/SDL_touch.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_filesystem.h
+1642206177 /usr/include/SDL2/SDL_filesystem.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_haptic.h
+1642206177 /usr/include/SDL2/SDL_haptic.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_hints.h
+1642206177 /usr/include/SDL2/SDL_hints.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_loadso.h
+1642206177 /usr/include/SDL2/SDL_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_log.h
+1642206177 /usr/include/SDL2/SDL_log.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_messagebox.h
+1642206177 /usr/include/SDL2/SDL_messagebox.h
 	"SDL_stdinc.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_power.h
+1642206177 /usr/include/SDL2/SDL_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_render.h
+1642206177 /usr/include/SDL2/SDL_render.h
 	"SDL_stdinc.h"
 	"SDL_rect.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_sensor.h
+1642206177 /usr/include/SDL2/SDL_sensor.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_shape.h
+1642206177 /usr/include/SDL2/SDL_shape.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -7038,7 +7049,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_system.h
+1642206177 /usr/include/SDL2/SDL_system.h
 	"SDL_stdinc.h"
 	"SDL_keyboard.h"
 	"SDL_render.h"
@@ -7046,13 +7057,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_timer.h
+1642206177 /usr/include/SDL2/SDL_timer.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1586798831 /usr/include/SDL2/SDL_version.h
+1642206177 /usr/include/SDL2/SDL_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
@@ -7095,4 +7106,32 @@
 
 1646041990 source:/home/ruslan/projects/win-sdl/Win-SDL-v1/window/WinGraphics.cpp
 	"WinGraphics.h"
+
+1646488005 source:/home/kadmin/project/win-sdl/Win-SDL-v1/window/WinGraphics.cpp
+	"WinGraphics.h"
+
+1646488005 /home/kadmin/project/win-sdl/Win-SDL-v1/window/WinGraphics.h
+	<SDL2/SDL.h>
+	<SDL/SDL.h>
+
+1642206177 /usr/include/SDL2/SDL_hidapi.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1642206177 /usr/include/SDL2/SDL_metal.h
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1642206177 /usr/include/SDL2/SDL_locale.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1642206177 /usr/include/SDL2/SDL_misc.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
 
